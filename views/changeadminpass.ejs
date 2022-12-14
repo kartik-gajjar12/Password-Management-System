@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/addnewcategory.css' />
+    <link rel='stylesheet' href='/stylesheets/viewallcategory.css'>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+<style>
+    #msg_content{
+    position: relative;
+    left: 40%;
+    top:40px;
+    background-color: white;
+    color:green;
+    width: 24%;
+    padding: 8px;
+    border: 2px double green;
+    border-radius: 5px;
+}
+.msg{
+  background-color: lightgreen;
+  width: 20%;
+  position: absolute;
+  right: 15px;
+  top: 6px;
+  height: 6%;
+  border: 2px solid white;
+  border-radius: 7px;
+  color: darkgreen;
+  
+}
+
+
+.msgcontent{
+
+position: relative;
+top:9px;
+left: 8px;
+}
+
+</style>    
+</head>
+
+<body>
+
+    <% if(msg!='') {%>
+        <div class="msg" style="position: absolute;top: 40px;z-index: 1;" >
+          <span class="msgcontent" ><strong><%= msg %></strong></span>
+        </div>
+    <% } %>
+
+
+
+
+
+
+
+
+    <div id="navigation">
+        <ul>
+            <li><a href="/admin">Home</a> 
+            <li><a href="/changeuser">Change username</a>
+              
+            </li>
+            <li><a href="/changeadminpass">Change Password</a>
+              
+            </li>
+        </ul>
+
+        <span>
+            <form method="POST" action="/logout"><input type="submit" class="ubtn" value="Logout"> </form>
+        </span>
+        <img src="/images/meta-og-image.png">
+
+    </div>
+
+
+    <div id="dashboad-container">
+
+
+
+        <div id="div1">
+            <h2> change Password</h2>
+           
+            <form method="POST" action="/changepass">
+                <table id="table-content">
+                    <tr>
+                        <td align="right" >Current Password: </td>
+                        <td align="left"><input type="password" class="txt" placeholder="Enter Current Password" name="txtcurrpass" autocomplete="off" required><br>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right">New Password: </td>
+                        <td align="left"><input type="password" class="txt" placeholder="Enter New Password" autocomplete="off" name="txtnewpass" required><br>
+
+                        </td>
+
+                    </tr>
+                    
+                    <tr>
+                        <td align="right">Confirm Password: </td>
+                        <td align="left"><input type="password" class="txt" placeholder="Enter Confirm Password" autocomplete="off" name="txtcnewpass" required><br>
+
+                        </td>
+
+                    </tr>
+                    
+
+                    <tr>
+                        <td colspan="2"><input type="submit" class="ubtn uvbtn" value="Update"></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

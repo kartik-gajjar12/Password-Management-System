@@ -1,0 +1,163 @@
+body{
+  margin:0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url("/images/micah-williams-lmFJOx7hPc4-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
+#forgot{
+   position: relative;
+   top: 25px;
+   left: 70px;
+
+}
+#login-section{
+
+  width: 280px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color:white;
+}
+#login-section h2{
+ /* float: left; */
+ font-size: 40px;
+ border-bottom: 4px solid #3ad240;
+margin-bottom: 50px;
+padding: 7px 0;
+}
+
+
+#banner{
+
+  width: 50%;
+  position: relative;
+  left:50%;
+}
+
+#heading img{
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top:8px;
+  padding-right: 5px;
+}
+
+#sbtn:hover{
+
+  border: 2px solid lightblue;
+  box-shadow: 0 3px 20px #24a0ed;
+  transition: 0.5;
+ 
+}
+
+
+#heading h1{
+  color: white;
+  text-align: center;
+}
+
+.textbox{
+
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #3ad240;
+}
+table{
+  width: 100%;
+}
+.txt{
+  display: inline;
+}
+
+img{
+
+  height: 20px;
+  width: 20px;
+
+}
+
+.textbox input{
+
+   border: none; 
+  outline: none; 
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 170px;
+    margin: 0 10px;
+     
+}
+
+#sbtn{
+  width: 100%;
+  background: none;
+  border: 2px solid #3ad240;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+::placeholder{
+
+  color:white;
+}
+
+.textbox h5{
+  position: absolute;
+  top:130px;
+  left: 38px;
+}
+
+#login-section span{
+  position: relative;
+  top:0;
+}
+
+
+a:link{
+  color:#5ba53c;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #5ba53c;
+}
+
+a:hover{
+  color:#50ff08 ;
+}
+
+#cp{
+  position: relative;
+  left: 25px;
+}
+
+.msg{
+  background-color: lightgreen;
+  width: 20%;
+  position: absolute;
+  right: 15px;
+  top: 6px;
+  height: 6%;
+  border: 2px solid white;
+  border-radius: 7px;
+  color: darkgreen;
+  
+}
+
+.msgcontent{
+
+  position: relative;
+  top:9px;
+  left: 8px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+ 
+  
+
+<style>
+
+.qmark{
+  position: relative;
+  left: 30px;
+  height: 23px;
+  width: 23px;
+  top: 4px;
+
+}
+</style>
+
+
+</head>
+
+<body>
+  <% if(msg!='') {%>
+  <div class="msg" >
+    <span class="msgcontent"><strong><%= msg %></strong></span>
+  </div>
+  <% } %>
+  <div id="banner"></div>
+  <div id="heading">
+    <h1><img src="/images/meta-og-image.png"><%= title %></h1>
+  </div>
+  <div id="login-section">
+    <h2>Sign up </h2>
+    <div id="login-content">
+<form method="POST" action="/signup">
+      <div class="textbox">
+        <img src="/images/icons8-user-male-30.png">
+        <input type="text" class="txt" placeholder="Username" name="txtuser" autocomplete="off" required>
+      </div>
+      <div class="textbox">
+        <img src="/images/envelope-closed-32.png">
+        <input type="email" class="txt" placeholder="Email" name="txtemail" autocomplete="off" required>
+      </div>
+        <div class="textbox">
+            <img src="/images/icons8-lock-26.png">
+            <input type="password" class="txt" placeholder="Password" name="txtpass" required>
+        </div>
+          </div>
+
+          <div class="textbox">
+            <img src="/images/key-6-64.png">
+            <input type="password" class="txt" placeholder="Security Answer" name="txtsecure" required>
+           <a href="#"> <img class="qmark" src="/images/question-mark-48.png" onclick="alert('                                       Security Questions\n                                 =================\n Q1)What are the last five digits of your driving license number?\nQ2)What was your childhood nickname?\nQ3)What is the name of the first school you attended?')"> </a></div>
+
+           </div>
+    
+      <input type="submit" value="Sign up" id="sbtn"></td></form>
+      <span>Already have an account?&nbsp;&nbsp;&nbsp;<a href="/">sign in</a></span>
+    </div>
+  </form>
+
+  </div>
+
+
+
+</body>
+
+</html>

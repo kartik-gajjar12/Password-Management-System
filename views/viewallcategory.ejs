@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/addnewcategory.css' />
+    <link rel='stylesheet' href="/stylesheets/viewallcategory.css" />
+    <script src="/javascripts/jquery.js"></script>
+</head>
+
+<body>
+
+    <div id="navigation">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Password Category</a>
+                <ul>
+                    <li><a href="/addnewcategory">Add New Category</a> </li>
+                    <li><a href="/viewallcategory">View All Category</a> </li>
+                </ul>
+
+            </li>
+            <li><a href="#">Password Details</a>
+                <ul>
+                    <li><a href="/addnewpassword">Add New Password</a> </li>
+                    <li><a href="/viewallpassword">View All Password </a> </li>
+
+                </ul>
+
+            </li>
+        </ul>
+
+        <span>
+            <form method="POST" action="/logout"><input type="submit" class="ubtn" value="Logout"> </form>
+        </span>
+        <img src="/images/meta-og-image.png">
+
+    </div>
+
+
+    <div id="dashboad-container">
+
+        <div id="div1">
+            <h2>Password Category details</h2>
+            <form>
+                <table id="table-content">
+                    <thead>
+                        <tr>
+                            <th>Password Category Name </th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(records.length > 0 ) { %>
+                        <% records.forEach(function(row) { %>
+                        <tr>
+                            <td><%= row.category_name %></td>
+                            <td><a href="/edit_category/<%= row._id %>"><img class="img1" src="/images/icons8-edit-property-52.png"></a><a href="/delete/<%= row._id %>"><img class="img1" src="/images/delete.png"></a></td>
+                        </tr>
+                        <% }) %>
+                        <% }else{ %>
+                             <tr>
+                                <td colspan="2">Category Not Found</td>
+                                </tr>
+                            <% } %>
+                    </tbody>
+
+                </table>
+                
+
+            </form>
+            
+        </div>
+        <% if(records.length > 0) { %>
+        <%if(current!=1){%>
+        <a href="/viewallcategory/<%= Number(current)-1 %>" class="ubtn link prev">previous</a><%}%>
+        <%if(current!=pages){%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <a href="/viewallcategory/<%= Number(current)+1 %>" class="ubtn link next">next</a> <%}%>
+        <%}%>
+    </div>
+    
+
+
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

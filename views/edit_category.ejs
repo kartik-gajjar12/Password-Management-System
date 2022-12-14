@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/addnewcategory.css' />
+
+    <script src="/javascripts/jquery.js"></script>
+</head>
+
+<body>
+
+    <div id="navigation">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Password Category</a>
+                <ul>
+                    <li><a href="/addnewcategory">Add New Category</a> </li>
+                    <li><a href="/viewallcategory">View All Category</a> </li>
+                </ul>
+
+            </li>
+            <li><a href="#">Password Details</a>
+                <ul>
+                    <li><a href="/addnewpassword">Add New Password</a> </li>
+                    <li><a href="/viewallpassword">View All Password </a> </li>
+
+                </ul>
+
+            </li>
+        </ul>
+
+        <span><form method="POST" action="/logout"><input type="submit" class="ubtn" value="Logout"> </form></span>
+        <img src="/images/meta-og-image.png">
+
+    </div>
+
+
+    <div id="dashboad-container">
+
+        <div id="div1">
+            <h2> update Password Category</h2>
+            <form method="POST" action="/viewallcategory">
+                <table id="table-content">
+                    <tr>
+                        <td>Category Name: </td>
+                        <td><input type="text" class="txt" placeholder="Enter Category name" value="<%= records.category_name %>" name="txtcategoryname"></td>
+                        <input type="hidden" name="id" value="<%= records._id %>">
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="ubtn" value="update category">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="cancel" class="ubtn" id="cancelcate"></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

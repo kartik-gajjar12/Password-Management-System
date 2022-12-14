@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/viewallcategory.css'>
+    <script src="/javascripts/jquery.js"></script>
+<style>
+    
+.msg{
+  background-color: lightgreen;
+  width: 20%;
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  height: 6%;
+  border: 2px solid white;
+  border-radius: 7px;
+  color: darkgreen;
+  z-index: 1;
+}
+
+.msgcontent{
+
+  position: relative;
+  top:9px;
+  left: 8px;
+}
+
+</style>
+</head>
+
+<body>
+    <% if(msg!='') {%>
+        <div class="msg" >
+          <span class="msgcontent"><strong><%= msg %></strong></span>
+        </div>
+        <% } %>
+        <% if(update!='') {%>
+            <div class="msg" >
+              <span class="msgcontent"><strong><%= update %></strong></span>
+            </div>
+            <% } %>
+           
+    <div id="navigation">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Password Category</a>
+                <ul>
+                    <li><a href="/addnewcategory">Add New Category</a> </li>
+                    <li><a href="/viewallcategory">View All Category</a> </li>
+                </ul>
+
+            </li>
+            <li><a href="#">Password Details</a>
+                <ul>
+                    <li><a href="/addnewpassword">Add New Password</a> </li>
+                    <li><a href="/viewallpassword">View All Password </a> </li>
+                </ul>
+
+            </li>
+        </ul>
+            <div id="username-head">
+                <h4>Welcome,<%= user %></h4>
+            </div>  
+        <span><form method="POST" action="/logout"><input type="submit" class="ubtn" value="Logout"> </form></span>
+        <img src="/images/meta-og-image.png">
+
+    </div>
+
+
+    <div id="dashboad-container">
+        <h2 class="dashboad-head">Dashboard</h2>
+
+        <table id="dashboad-table">
+            <tr>
+
+                <td>
+                    <div class="profile" style="border: 2px solid white;"><img src="/upload/<%= img %>"></div>
+                </td>
+
+                <td rowspan="2">
+                    <table class="inner-table" style="width: 170%;" >
+                        <form name="ufrm" method="POST" action="/username-update">
+                            <tr>
+                                <td>
+                                    Username:</td>
+                                <td><input type="text" class="txt" id="txtuser" style="width: 60%;" value="<%=user1.username%>" name="txtduser" readonly required>
+                                    <input type="button" id="edit-user" value="edit" class="ubtn">
+                                    <input type="submit" name="ubtn" id="udisplay" value="Update" class="ubtn dubtn">
+                                    <input type="button" value="cancel" class="ubtn" id="canceluser">
+                                </td>
+                            </tr>
+                        </form>
+                        <form name="efrm" method="POST" action="/email-update">
+                            <tr>
+                                <td>
+                                    Email:</td>
+                                <td>
+                                    <input type="email" class="txt" id="txtemail" style="width: 60%;" value="<%=user1.email%>" name="txtdemail" readonly required>
+                                    <input type="button" id="edit-email" value="edit" class="ubtn">
+                                    <input type="submit" name="ubtn" id="edisplay" value="Update" class="ubtn dubtn">
+                                    <input type="button" value="cancel" class="ubtn" id="cancelemail">
+                                </td>
+                            </tr>
+                        </form>
+
+                        <tr>
+                            <td>
+                                <span class="pass-word">Password:</span></td>
+                            <td> 
+                                <input type="submit" class="modifybtn ubtn" name="ubtn" value="modify" class="ubtn">
+                                <span class="errmsg"><%=err%></span>
+                                <form name="pfrm" method="POST" action="/update-password">
+                                    <table class="password-table">
+                                        <tr>
+                                            <td>Current Password: </td>
+                                            <td><input type="password" placeholder="Enter Current password" class="txt" name="currentpass" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>New Password: </td>
+                                            <td><input type="password" class="txt" placeholder="Enter New password" name="newpass" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Confirm New Password: </td>
+                                            <td><input type="password" class="txt" placeholder=" Cunfirm password" name="confirmpass" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><input type="submit" value="update" class="ubtn" id="showupdate" ><input type="button" value="cancel" class="ubtn" id="cancelpass"></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </td>
+
+
+
+
+
+
+
+            </tr>
+            <tr >
+                <td>
+                    <form method="POST" action="/pofile-upload" enctype="multipart/form-data">
+                        <input type="file" class="move" name="pfile" required>
+                        <input type="submit" class="ubtn block move1" value="set image">
+                    </form>
+                </td>
+
+
+
+
+            </tr>
+        </table>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

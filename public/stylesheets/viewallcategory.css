@@ -1,0 +1,42 @@
+
+
+.img1{
+    height: 25px;
+    width: 25px;
+}
+
+
+.link{
+    text-decoration: none;
+    position: relative;
+}
+
+.prev{
+    top:70px;
+    left: 350px;
+    text-transform: uppercase;
+}
+
+.next{
+    top:70px;
+    left: 779px;
+    text-transform: uppercase;
+}
+
+#table-content td,#table-content td{
+
+    padding: 15px 80px;
+}
+
+#table-content thead tr{
+    background-color: #5ba53c ;
+}
+
+#table-content{
+    border: 2px solid whitesmoke;
+    border-collapse: collapse;
+    border-radius: 7px;
+    overflow: hidden;
+    width: 80%;
+}
+

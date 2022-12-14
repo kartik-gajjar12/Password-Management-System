@@ -1,0 +1,98 @@
+#table-content{
+    position: relative;
+  color: white;
+  text-align: center;
+  margin: auto;  
+  top:40px; 
+  font-size: 1.5em;
+  box-shadow: 0 4px 40px rgba(255, 255, 255, 0.70);
+  
+  
+}
+
+#msg_content{
+    position: relative;
+    left: 40%;
+    top:20px;
+    background-color: white;
+    color:green;
+    width: 24%;
+    padding: 8px;
+    border: 2px double green;
+    border-radius: 5px;
+}
+
+#validate{
+    position: relative;
+    left: 40%;
+    top:20px;
+    background-color: white;
+    color: red;
+    width: 24%;
+    padding: 8px;
+    border: 2px double red;
+    border-radius: 5px;
+}
+
+#table-content tr td{
+    padding: 10px;
+}
+
+#div1{
+    width:70%;
+    margin: auto;
+
+}
+#dashboad-container{
+
+    height: 400px;
+       
+}
+
+.txt{
+    font-size: 0.7em;
+
+}
+
+.uvbtn{
+    height: 50px;
+    width: 160px;
+    font-size: 0.8em;
+}
+
+#table-content td{
+    padding: 15px 10px;
+}
+
+
+#select-category{
+    width: 300px;
+}
+
+#select-category select{
+
+    height: 40px;
+    padding: 5px 15px;
+    line-height: 16px;
+    font-size: 16px;
+    width: 100%;
+    appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: none;
+    color: white;
+}
+
+.txtarea{
+    font-size: 15px;
+    background-color: black;
+    color: white;
+}
+
+#select-category select option{
+    background-color: black;
+    color:white;
+    padding: 10px 10px;
+    font-size: 16px;
+
+}

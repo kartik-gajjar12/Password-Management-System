@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+    
+    .msg{
+      background-color: lightgreen;
+      width: 20%;
+      position: absolute;
+      right: 15px;
+      top: 6px;
+      height: 6%;
+      border: 2px solid white;
+      border-radius: 7px;
+      color: darkgreen;
+      z-index: 1;
+    }
+    
+    .msgcontent{
+    
+      position: relative;
+      top:9px;
+      left: 8px;
+    }
+    
+    </style>
+    
+
+</head>
+
+<body>
+  <% if(msg!='') {%>
+    <div class="msg" >
+      <span class="msgcontent"><strong><%= msg %></strong></span>
+    </div>
+    <% } %>
+
+
+
+  <div id="banner"></div>
+  <div id="heading">
+    <h1><img src="/images/meta-og-image.png"><%= title %></h1>
+  </div>
+  <div id="login-section">
+    <h2>Login </h2>
+    <div id="login-content">
+<form method="POST" action="/">
+      <div class="textbox">
+        <img src="/images/icons8-user-male-30.png">
+        <input type="text" class="txt" placeholder="Username" name="txtuser" autocomplete="off" required>
+      </div>
+      <div class="textbox">
+        <img src="/images/icons8-lock-26.png">
+        <input type="password" class="txt" placeholder="Password" name="txtpass" required>
+      </div>
+
+      <input type="submit" value="Sign in" id="sbtn"></td></form>
+      <span>create new account?&nbsp;&nbsp;&nbsp;<a href="/signup">sign up</a></span><br>
+
+      <a href="/forgotpassword" id="forgot">forgot password?</a>
+    </div>
+  </form>
+
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/addnewcategory.css' />
+    <link rel='stylesheet' href='/stylesheets/viewallcategory.css'>
+    <script src="/javascripts/jquery.js"></script>
+<style>
+    
+.msg{
+  background-color: lightgreen;
+  width: 20%;
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  height: 6%;
+  border: 2px solid white;
+  border-radius: 7px;
+  color: darkgreen;
+  z-index: 1;
+}
+
+.msgcontent{
+
+  position: relative;
+  top:9px;
+  left: 8px;
+}
+
+</style>
+</head>
+
+<body>
+           
+    <div id="navigation">
+        <ul>
+            <li><a href="/admin">Home</a> 
+            <li><a href="/changeuser">Change username</a>
+               
+            </li>
+            <li><a href="/changeadminpass">Change Password</a>
+                
+            </li>
+        </ul>
+        <div id="username-head">
+            <h4>Welcome,<%=admin%></h4>
+        </div>  
+        <span><form method="POST" action="/logout"><input type="submit" class="ubtn" value="Logout"> </form></span>
+        <img src="/images/meta-og-image.png">
+
+    </div>
+
+
+    <div id="dashboad-container">
+        <h2 class="dashboad-head">User Details
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Total Users:<%= count %>
+        </h2>
+
+        
+        <table id="table-content">
+            <thead>
+                <tr>
+                    <th>User Name </th>
+                    <th>Email</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% if(records.length > 0 ) { %>
+                <% records.forEach(function(row) { %>
+                <tr>
+                    <td><%= row.username %></td>
+                    <td><%= row.email %></td>
+                </tr>
+                <% }) %>
+                <% }else{ %>
+                     <tr>
+                        <td colspan="2">No Records Found</td>
+                        </tr>
+                    <% } %>
+            </tbody>
+
+        </table>
+
+        
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>
